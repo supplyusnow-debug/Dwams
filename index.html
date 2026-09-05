@@ -4,130 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DWAMS - Don't Worry Asset Management System</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    input {
+      display: block;
+      width: 300px;
+      padding: 10px;
+      margin: 5px 0 15px;
+    }
+
+    .section {
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .property {
+      margin-top: 15px;
+      padding: 15px;
+      border: 1px solid #999;
+    }
+  </style>
 </head>
+
 <body>
+
   <h1>DWAMS</h1>
   <h2>Don't Worry Asset Management System</h2>
-
   <p>Property Rental Management System</p>
 
   <hr>
 
-  <h3>Welcome to DWAMS</h3>
-  <p>Manage properties, landlords, tenants and rentals from one place.</p>
+  <h2>DWAMS Dashboard</h2>
+  <p>Welcome to your property management system.</p>
 
-</body>
-</html><h1>DWAMS</h1>
-<p>Don'nt Worry Asset Management System</p>
-<p>Property Rental Management System</p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DWAMS - Don't Worry Asset Management System</title>
-</head>
-<body>
-  <h1>DWAMS</h1>
-  <h2>Don't Worry Asset Management System</h2>
+  <h3>Main Menu</h3>
 
-  <p>Property Rental Management System</p>
+  <button type="button" onclick="showProperties()">Properties</button>
+  <button type="button">Landlords</button>
+  <button type="button">Tenants</button>
+  <button type="button">Rentals</button>
+  <button type="button">Payments</button>
+  <button type="button">Reports</button>
 
-  <hr>
+  <div id="propertiesSection" class="section">
 
-  <h3>Welcome to DWAMS</h3>
-  <p>Manage properties, landlords, tenants and rentals from one place.</p>
+    <h3>Properties</h3>
+    <p>Manage all your properties here.</p>
 
-</body>
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DWAMS - Don't Worry Asset Management System</title>
-</head>
-<body>
-  <h1>DWAMS</h1>
-  <h2>Don't Worry Asset Management System</h2>
+    <label>Property Name</label>
+    <input type="text" id="propertyName" placeholder="Enter property name">
 
-  <p>Property Rental Management System</p>
+    <label>Address</label>
+    <input type="text" id="propertyAddress" placeholder="Enter property address">
 
-  <hr>
+    <label>Monthly Rent</label>
+    <input type="number" id="monthlyRent" placeholder="Enter monthly rent">
 
-  <h3>Welcome to DWAMS</h3>
-  <p>Manage properties, landlords, tenants and rentals from one place.</p>
+    <button type="button" onclick="addProperty()">Add Property</button>
 
-</body>
-</html>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DWAMS - Don't Worry Asset Management System</title>
-</head>
-<body>
-  <h1>DWAMS</h1>
-  <h2>Don't Worry Asset Management System</h2>
+    <div id="propertyList"></div>
 
-  <p>Property Rental Management System</p>
-
-  <hr>
-
-  <h3>Welcome to DWAMS</h3>
-  <p>Manage properties, landlords, tenants and rentals from one place.</p>
-<h3>Main Menu</h3>
-<h3>Main Menu</h3>
-<button onclick="showProperties()">Properties</button>
-<button>Landlords</button>
-<button>Tenants</button>
-<button>Rentals</button>
-<button>Payments</button>
-<button>Reports</button>
-<h3>Properties</h3>
-  <p>Manage all your properties here.</p>
-
-<label>Property Name</label>
-<input type="text" id="propertyName" placeholder="Enter property name">
-<label>Address</label>
-<input type="text" id="propertyAddress" placeholder="Enter property address">
-<label>Monthly Rent</label>
-<input type="number" id="monthlyRent" placeholder="Enter monthly rent">
-
-<button type="button" onclick="addProperty()">Add Property</button>
-
-<div id="propertyList"></div>
-  <script>
-
-</script>
+  </div>
 
   <script>
-function addProperty() {
-  const name = document.getElementById("propertyName").value;
-  const address = document.getElementById("propertyAddress").value;
-  const rent = document.getElementById("monthlyRent").value;
+    function showProperties() {
+      alert("Properties section opened");
+    }
 
-  if (!name || !address || !rent) {
-    alert("Please complete all property details.");
-    return;
-  }
+    function addProperty() {
+      const name = document.getElementById("propertyName").value;
+      const address = document.getElementById("propertyAddress").value;
+      const rent = document.getElementById("monthlyRent").value;
 
-  const propertyList = document.getElementById("propertyList");
+      if (!name || !address || !rent) {
+        alert("Please complete all property details.");
+        return;
+      }
 
-  const property = document.createElement("p");
-  property.innerHTML = "<strong>" + name + "</strong><br>" +
-                       address + "<br>" +
-                       "Monthly Rent: R" + rent;
+      const propertyList = document.getElementById("propertyList");
 
-  propertyList.appendChild(property);
+      const property = document.createElement("div");
+      property.className = "property";
 
-  alert("Property added successfully");
+      property.innerHTML =
+        "<strong>" + name + "</strong><br>" +
+        address + "<br>" +
+        "Monthly Rent: R" + rent;
 
-  document.getElementById("propertyName").value = "";
-  document.getElementById("propertyAddress").value = "";
-  document.getElementById("monthlyRent").value = "";
-}
-</script>
+      propertyList.appendChild(property);
+
+      alert("Property added successfully");
+
+      document.getElementById("propertyName").value = "";
+      document.getElementById("propertyAddress").value = "";
+      document.getElementById("monthlyRent").value = "";
+    }
+  </script>
+
 </body>
 </html>
