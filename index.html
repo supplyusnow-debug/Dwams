@@ -108,6 +108,7 @@
 <input type="number" placeholder="Enter monthly rent">
 
 <button onclick="AddProperty()">AddProperty</button>
+  <div id="propertylist"></div>
 <button>View Properties</button>
   <script>
 function showProperties() {
@@ -123,6 +124,11 @@ function showProperties() {
 <label>Monthly Rent</label>
 <input type="number" placeholder="Enter monthly rent">
 
-<button>Add Property</button>
+<button onclick="addProperty()">Add Property</button>
+  <script>
+function addProperty() {
+  alert("Property added successfully");
+}
+</script>
 </body>
 </html>
