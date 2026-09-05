@@ -86,14 +86,20 @@
 <button>Payments</button>
 <button>Reports</button>
 <h3>Properties</h3>
-  <label>Property Name</label>
-<input type="text" placeholder="Enter property name">
+  <p>Manage all your properties here.</p>
 
-<input type="text" id="propertyAddress" placeholder="Enter property address">
+<label>Property Name</label>
 <input type="text" id="propertyName" placeholder="Enter property name">
 
+<label>Address</label>
+<input type="text" id="propertyAddress" placeholder="Enter property address">
+
 <label>Monthly Rent</label>
-<input type="number" placeholder="Enter monthly rent">
+<input type="number" id="monthlyRent" placeholder="Enter monthly rent">
+
+<button onclick="addProperty()">Add Property</button>
+
+<div id="propertyList"></div>
 <p>Manage all your properties here.</p>
 <button onclick="addProperty()">Add Property</button>
   <div id="propertyList"></div>
